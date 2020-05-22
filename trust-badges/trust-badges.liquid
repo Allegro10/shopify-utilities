@@ -1,0 +1,12 @@
+{% assign trust_badge_title = 'Secured &amp; trusted checkout' %}
+
+{%- unless shop.enabled_payment_types == empty -%}
+<div class="trust-badges--container"> 
+    <h3 class="trust-badges--title"><span>{{ trust_badge_title }}</span></h3>
+    <ul class="list--inline payment-icons trust-badges--images">
+        {%- for type in shop.enabled_payment_types -%}
+            <li>{{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}</li>
+        {%- endfor -%}
+    </ul>
+</div>
+{%- endunless -%}
