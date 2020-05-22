@@ -1,0 +1,227 @@
+<div class="benefits__section-wrapper">
+    <div class="container page-width">
+
+        {% if section.settings.title != blank %}
+        <h2 class="benefits__title title">{{ section.settings.title | escape }}</h2>
+        {% endif %}
+
+        {% if section.blocks.size > 0 %}
+        <div class="benefits__card-wrapper">
+            {% for block in section.blocks %}
+            <div class="benefits__card" {{ block.shopify_attributes }}>
+                {% if block.settings.link != blank %}
+                <a href="{{ block.settings.link }}">
+                {% endif %}
+                    {% if block.settings.image != blank %}
+                        <div class="benefits__image-wrapper">
+                            {{ block.settings.image | img_url: '200x200', scale: 2 | img_tag: block.settings.image.alt, 'benefits__image' }}
+                        </div>
+                    {% elsif block.settings.svg_image != blank %}
+                        <div class="benefits__image-wrapper">
+                            <img src="{{ block.settings.svg_image }}" class="benefits__image" alt="Benefits" />
+                        </div>
+                    {% else %}
+                        <div class="benefits__image-wrapper">
+                            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                        </div>
+                    {% endif %}
+                    {% if block.settings.benefit_text != blank %}
+                        <p class="benefits__text">{{ block.settings.benefit_text }}</p>
+                    {% endif %}
+                {% if block.settings.link != blank %}
+                </a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+    </div> 
+</div>
+
+{% schema %}
+  {
+    "name": "Benefits Section",
+    "class": "index-section",
+    "max_blocks": 4,
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Section Background Color"       
+      },
+      {
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color"       
+      },
+      {
+        "type": "color",
+        "id": "container_background_color",
+        "label": "Inner Container Color"       
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Text Color"       
+      },
+      {
+          "type":      "range",
+          "id":        "container_border_radius",
+          "min":       0,
+          "max":        10,
+          "step":       1,
+          "unit":       "px",
+          "label":     "Container Border Radius",
+          "default":   5
+      },
+      {
+          "type":      "range",
+          "id":        "container_padding",
+          "min":       0,
+          "max":        50,
+          "step":       1,
+          "unit":       "px",
+          "label":     "Container Padding",
+          "default":   0
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Benefits"       
+      },
+	  {
+        "type": "select",
+        "id": "image_height",
+        "label": "Max Image Height",
+        "default": "150px",
+        "options": [
+          {
+            "label": "50px",
+            "value": "50px"
+          },
+          {
+            "label": "75px",
+            "value": "75px"
+          },
+          {
+            "label": "100px",
+            "value": "100px"
+          },
+          {
+            "label": "125px",
+            "value": "125px"
+          },
+          {
+            "label": "150px",              
+            "value": "150px"
+          },
+          {
+            "label": "175px",              
+            "value": "175px"
+          },
+          {
+            "label": "200px",              
+            "value": "200px"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "logo_image",
+        "name": "Card",
+        "settings": [
+          {
+             "type":      "header",
+             "content":   "Image",
+             "info":      "Choose either image or SVG image. Image wil need to be removed to show an SVG image."
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "svg_image",
+            "label": "SVG Image"       
+          },
+          {
+             "type":      "header",
+             "content":   "Text and links",
+             "info":      "Choose either image or SVG image. Image wil need to be removed to show an SVG image."
+          },
+          {
+            "type": "text",
+            "id": "benefit_text",
+            "label": "Benefit Text",
+            "default": "Benefit"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link",
+            "info": "Optional"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Benefits",
+        "category": "Additional",
+        "blocks": [
+          {
+            "type": "logo_image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .benefits__section-wrapper {
+    background-color: {{ section.settings.background_color }};
+    padding: 3rem 0;
+  }
+  .benefits__title {
+    color: {{ section.settings.title_color }};
+  }
+  .benefits__card-wrapper {
+    background-color: {{ section.settings.container_background_color }};
+    border-radius: {{ section.settings.container_border_radius | append: "px" }};
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: {{ section.settings.container_padding | append: "px" }};
+  }
+  .benefits__card {
+    flex: 1 1 0;
+    margin: 1rem 2rem;
+    text-align: center;
+  }
+  @media screen and (max-width: 500px) {
+    .benefits__card {
+      flex-basis: 100%;
+      margin: 1rem 0.5rem;
+    }
+  }
+  .benefits__image-wrapper {
+    margin: 0 auto 0.25rem;
+  }
+  .benefits__image,
+  .placeholder-svg {
+    height: auto;
+    max-height: {{ section.settings.image_height }};
+    max-width: 100%;
+  }
+  .benefits__text {
+    color: {{ section.settings.color }};
+    font-size: 1.1rem;
+    margin: 0;
+  	padding: 0;
+  }
+</style>
