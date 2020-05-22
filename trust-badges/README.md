@@ -3,11 +3,11 @@
 
 ---
 
-#Simple Trust Badges
+# Simple Trust Badges
 
 ---
 
-###Instructions
+### Instructions
 
 1. Locate theme.liquid and add `{{ 'trust-badges.scss' | asset_url | stylesheet_tag }}` before the `</head>` tag.
 2. Add `trust-badges.scss.liquid' to the Assets folder
