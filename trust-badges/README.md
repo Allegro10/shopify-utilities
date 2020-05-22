@@ -1,9 +1,7 @@
-# Shopify Utilities
+# Shopify Utilities : Simple Trust Badges
 _Version: 1.0.0_
 
 ---
-
-# Simple Trust Badges
 
 ### Instructions
 
