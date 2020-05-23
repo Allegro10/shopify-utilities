@@ -9,7 +9,7 @@ The section comprises of a choice of either an image or SVG and text section. Th
 
 ### Instructions
 
-1. Add `benefits-bar.liquid' to the Sections folder. The section will become available in the theme customiser once it has been added and saved.
+1. Add `benefits-bar.liquid` to the Sections folder. The section will become available in the theme customiser once it has been added and saved.
 2. Customise the section using the theme customiser. The section is labelled "Benefits" under the category "Additional".
 
 ---
