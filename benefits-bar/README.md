@@ -3,7 +3,7 @@
 
 ---
 
-The section comprises of a choice of either an image or SVG and text section. The section benefits with a number of colour options for background and text colour. Other options inlcude border radius to the inner container.
+The section comprises of a choice of either an image or SVG and a text section. The section benefits with a number of colour options for background and text colour. Other options inlcude border radius to the inner container.
 
 ---
 
