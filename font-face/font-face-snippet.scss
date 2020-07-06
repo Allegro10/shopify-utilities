@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Acier BAT Text Solid';
+    src:url('{{ 'please-replace-me.eot' | file_url }}');
+    src:url('{{ 'please-replace-me.eot' | file_url | replace: '?', '?#iefix' }}') format('embedded-opentype'),
+        url('{{ 'please-replace-me.woff2' | file_url }}') format('woff2'),
+        url('{{ 'please-replace-me.woff' | file_url }}') format('woff'),  
+        url('{{ 'please-replace-me.ttf' | file_url }}') format('truetype'),
+        url('{{ 'please-replace-me.svg' | file_url | append: '#please-replace-me' }}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
