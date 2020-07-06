@@ -3,15 +3,13 @@
 
 ---
 
-#Benefits Bar
-
-The section comprises of a choice of either an image or SVG.
+The section comprises of a choice of either an image or SVG and a text section. The section benefits with a number of colour options for background and text colour. Other options inlcude border radius to the inner container.
 
 ---
 
-###Instructions
+### Instructions
 
-1. Add `benefits-bar.liquid' to the Sections folder. The section will become available in the theme customiser once it has been added and saved.
+1. Add `benefits-bar.liquid` to the Sections folder. The section will become available in the theme customiser once it has been added and saved.
 2. Customise the section using the theme customiser. The section is labelled "Benefits" under the category "Additional".
 
 ---
