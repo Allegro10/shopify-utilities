@@ -4,12 +4,7 @@ _Version: 1.0.0_
 ---
 ---
 
-## Theme Specific Instructions
-
----
----
-
-### Instructions for STREAMLINE (VERSION 3.0.5) 
+### Instructions 
 
 1. Go to the link labelled "Themes".
 2. Choose the theme you would like the section added to, then click "Action".
