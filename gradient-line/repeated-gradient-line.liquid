@@ -1,0 +1,117 @@
+<style>
+.gradient-line 
+{
+  background: {{ section.settings.background_color }};
+  background-image: repeating-linear-gradient(
+    {{ section.settings.gradient_angle | append: "deg" }},
+    {{ section.settings.color_1 }},
+    {{ section.settings.color_2 }} {{ section.settings.gradient_width_1 | append: "px" }}, 
+    {{ section.settings.color_3 }} {{ section.settings.gradient_width_2 | append: "px" }}, 
+    {{ section.settings.color_4 }} {{ section.settings.gradient_width_3 | append: "px" }});
+  background-image: -o-repeating-linear-gradient(
+    {{ section.settings.gradient_angle | append: "deg" }},
+    {{ section.settings.color_1 }},
+    {{ section.settings.color_2 }} {{ section.settings.gradient_width_1 | append: "px" }}, 
+    {{ section.settings.color_3 }} {{ section.settings.gradient_width_2 | append: "px" }}, 
+    {{ section.settings.color_4 }} {{ section.settings.gradient_width_3 | append: "px" }});
+  display: block;
+  height: {{ section.settings.gradient_height | append: "px" }};
+  width: 100%;
+}
+</style>
+
+<div class="gradient-line"></div>
+
+{% schema %}
+  {
+    "name": "Gradient Line",
+    "settings": [
+      {
+        "type": "range",
+        "id": "gradient_height",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "label": "Height",
+        "default": 20
+      },
+      {
+        "type":      "range",
+        "id":        "gradient_angle",
+        "min":       0,
+        "max":        360,
+        "step":       10,
+        "unit":       "deg",
+        "label":     "Gradient angle",
+        "default":   130
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_1",
+        "label": "Color stop 1",
+        "default": "transparent"
+      },
+      {
+        "type": "color",
+        "id": "color_2",
+        "label": "Color stop 2",
+        "default": "transparent"
+      },
+      {
+        "type":      "range",
+        "id":        "gradient_width_1",
+        "min":       0,
+        "max":        100,
+        "step":       1,
+        "unit":       "px",
+        "label":     "Gradient Width 1",
+        "default":   10
+      },
+      {
+        "type": "color",
+        "id": "color_3",
+        "label": "Color stop 3",
+        "default": "#63a1db"
+      },
+      {
+        "type":      "range",
+        "id":        "gradient_width_2",
+        "min":       0,
+        "max":        100,
+        "step":       1,
+        "unit":       "px",
+        "label":     "Gradient Width 2",
+        "default":   10
+      },
+      {
+        "type": "color",
+        "id": "color_4",
+        "label": "Color stop 4",
+        "default": "#63a1db"
+      },
+      {
+        "type":      "range",
+        "id":        "gradient_width_3",
+        "min":       0,
+        "max":        100,
+        "step":       1,
+        "unit":       "px",
+        "label":     "Gradient Width 3",
+        "default":   20
+      }
+	],
+    "presets": [
+      {
+        "name": "Gradient Line",
+        "category": "Additional"
+      }
+    ]
+  }
+{% endschema %}
