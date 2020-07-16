@@ -20,6 +20,8 @@ _Version: 1.0.0_
 7. Paste the code on line 621.
 8. Copy the code under comment 'PAGE LOAD' (i.e. line  18).
 9. Paste the code on line 539.
+10. Locate a file named 'product-images.liquid' in Snippets.
+11. Scroll down to line 84 and add line 21 detailed group-image-swap.js
 10. Save the files
 11. Test the function.
 
