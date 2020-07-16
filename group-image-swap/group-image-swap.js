@@ -17,3 +17,6 @@ this._filterThumbnail(variant);
 // PAGE LOAD
 this._filterThumbnail(this.currentVariant);
 
+// DATA ATTRIBUTE
+data-thumbnail-color="{{ media.alt }}"
+
